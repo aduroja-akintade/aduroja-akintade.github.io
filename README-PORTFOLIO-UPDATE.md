@@ -1,1 +1,0 @@
-Portfolio redesign in progress. This file marks the September 2026 evidence-first redesign deployment.
