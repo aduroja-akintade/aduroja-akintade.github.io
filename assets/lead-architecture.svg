@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2a1b10"/><stop offset="1" stop-color="#49301f"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity=".18"/></filter></defs>
+<rect width="1200" height="520" rx="28" fill="url(#bg)"/>
+<text x="52" y="62" fill="#ffb15f" font-size="18" font-family="monospace" font-weight="700">LEAD QUALIFICATION · VERIFIED ROUTING MAP</text>
+<text x="52" y="98" fill="#ffffff" font-size="34" font-family="Arial,sans-serif" font-weight="700">Deterministic qualification with five tested final outcomes</text>
+<g font-family="Arial,sans-serif" font-size="15" font-weight="700" filter="url(#s)">
+<g transform="translate(52 170)"><rect width="150" height="62" rx="14" fill="#fff"/><text x="75" y="38" text-anchor="middle" fill="#11131a">Form Trigger</text></g>
+<g transform="translate(250 170)"><rect width="168" height="62" rx="14" fill="#ff9b45"/><text x="84" y="38" text-anchor="middle" fill="#11131a">Timeline Switch</text></g>
+<g transform="translate(470 130)"><rect width="138" height="54" rx="13" fill="#baff2a"/><text x="69" y="33" text-anchor="middle" fill="#11131a">Hot</text></g>
+<g transform="translate(470 205)"><rect width="138" height="54" rx="13" fill="#fff"/><text x="69" y="33" text-anchor="middle" fill="#11131a">Warm</text></g>
+<g transform="translate(470 280)"><rect width="138" height="54" rx="13" fill="#fff"/><text x="69" y="33" text-anchor="middle" fill="#11131a">Cold</text></g>
+<g transform="translate(660 130)"><rect width="166" height="54" rx="13" fill="#ff9b45"/><text x="83" y="33" text-anchor="middle" fill="#11131a">Budget Switch</text></g>
+<g transform="translate(870 104)"><rect width="174" height="48" rx="12" fill="#7c4dff"/><text x="87" y="30" text-anchor="middle" fill="#fff">Priority Plus</text></g>
+<g transform="translate(870 164)"><rect width="174" height="48" rx="12" fill="#3156ff"/><text x="87" y="30" text-anchor="middle" fill="#fff">Priority</text></g>
+<g transform="translate(870 224)"><rect width="174" height="48" rx="12" fill="#21a79c"/><text x="87" y="30" text-anchor="middle" fill="#fff">Default</text></g>
+</g>
+<g stroke="#d7a06b" stroke-width="4" fill="none"><path d="M202 201H250"/><path d="M418 201h28v-44h24"/><path d="M446 201h24v31"/><path d="M446 201v106h24"/><path d="M608 157h52"/></g>
+<g stroke="#9c7ce8" stroke-width="3" fill="none"><path d="M826 157h22v-29h22"/><path d="M848 157h22v31"/><path d="M848 157v91h22"/></g>
+<rect x="52" y="385" width="1095" height="74" rx="14" fill="#11131a" stroke="#6f4d33"/>
+<text x="78" y="416" fill="#ffb15f" font-size="15" font-family="monospace" font-weight="700">FINAL ACTIONS</text>
+<text x="78" y="444" fill="#efe0d2" font-size="16" font-family="Arial,sans-serif">Each final route sets status → appends the lead to Google Sheets CRM → sends Gmail acknowledgement. 5/5 routes tested.</text>
+</svg>
