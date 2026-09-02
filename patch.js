@@ -11,6 +11,23 @@
       if(badge){badge.textContent=label;badge.classList.remove('acid');badge.classList.add('blue');}
     });
   };
-  swap('Cupid Intelligent Email Routing','assets/cupid-architecture.svg?v=20260902-5','Verified workflow map');
-  swap('Lead Qualification & CRM Automation','assets/lead-architecture.svg?v=20260902-5','Verified routing map');
+  swap('Cupid Intelligent Email Routing','assets/cupid-architecture.svg?v=20260902-6','Verified workflow map');
+  swap('Lead Qualification & CRM Automation','assets/lead-architecture.svg?v=20260902-6','Verified routing map');
+
+  // Temporarily prevent recruiters being sent into the AWS repo while a public credential is being remediated.
+  document.querySelectorAll('.project h3').forEach(h=>{
+    if(h.textContent.trim()!=='High-Availability 3-Tier AWS')return;
+    const card=h.closest('.project');
+    const link=card?.querySelector('.project-link');
+    const badge=card?.querySelector('.badge');
+    if(link){
+      link.removeAttribute('href');
+      link.removeAttribute('target');
+      link.style.cursor='default';
+      link.style.opacity='.72';
+      link.textContent='Repository security cleanup in progress';
+      link.addEventListener('click',e=>e.preventDefault());
+    }
+    if(badge)badge.textContent='Architecture evidence';
+  });
 })();
