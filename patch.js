@@ -12,9 +12,9 @@
     });
   };
 
-  // Use clean evidence maps for the two systems whose raw captures are wider than the portfolio card.
-  swap('Cupid Intelligent Email Routing','assets/cupid-architecture.svg?v=20260902-7','Verified workflow map');
-  swap('Lead Qualification & CRM Automation','assets/lead-architecture.svg?v=20260902-7','Verified routing map');
+  // Use clean evidence maps for systems whose raw captures are too wide for the portfolio card.
+  swap('Cupid Intelligent Email Routing','assets/cupid-architecture.svg?v=20260903-1','Verified workflow map');
+  swap('Lead Qualification & CRM Automation','assets/lead-architecture.svg?v=20260903-1','Verified routing map');
 
   // Make the WhatsApp implementation a full-width bridge between automation work and cloud work.
   document.querySelectorAll('.project h3').forEach(h=>{
@@ -23,8 +23,7 @@
     }
   });
 
-  // The AWS current branch is now cleaned. Link recruiters to the architecture evidence directly
-  // while the previously exposed key is treated as compromised and the historical commit is remediated separately.
+  // Link the AWS card to selected architecture evidence rather than exposing the repository as the primary recruiter path.
   document.querySelectorAll('.project h3').forEach(h=>{
     if(h.textContent.trim()!=='High-Availability 3-Tier AWS')return;
     const card=h.closest('.project');
@@ -41,7 +40,12 @@
     if(badge)badge.textContent='Architecture evidence';
   });
 
-  // Final recruiter-facing polish based on live desktop QA.
+  // Keep unfinished or weak repository surfaces out of the recruiter journey until they are portfolio-ready.
+  document.querySelectorAll('.row-link').forEach(link=>{
+    const title=link.querySelector('b')?.textContent.trim();
+    if(title==='Automated Developer Onboarding') link.remove();
+  });
+
   const style=document.createElement('style');
   style.textContent=`
     section[id]{scroll-margin-top:92px}
