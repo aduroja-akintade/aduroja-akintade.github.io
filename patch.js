@@ -13,8 +13,23 @@
   };
 
   // Use clean evidence maps for systems whose raw captures are too wide for the portfolio card.
-  swap('Cupid Intelligent Email Routing','assets/cupid-architecture.svg?v=20260903-1','Verified workflow map');
+  swap('Cupid Intelligent Email Routing','assets/cupid-architecture.svg?v=20260915-1','Verified workflow map');
   swap('Lead Qualification & CRM Automation','assets/lead-architecture.svg?v=20260903-1','Verified routing map');
+
+  // Give Cupid a direct path to the full verified case study and playable demo.
+  document.querySelectorAll('.project h3').forEach(h=>{
+    if(h.textContent.trim()!=='Cupid Intelligent Email Routing')return;
+    const card=h.closest('.project');
+    const actions=card?.querySelector('.project-actions');
+    const caseButton=actions?.querySelector('.case-link');
+    if(caseButton){
+      const link=document.createElement('a');
+      link.className='case-link cupid-demo-link';
+      link.href='cupid.html';
+      link.textContent='Watch demo + case study';
+      caseButton.replaceWith(link);
+    }
+  });
 
   // Make the WhatsApp implementation a full-width bridge between automation work and cloud work.
   document.querySelectorAll('.project h3').forEach(h=>{
@@ -56,6 +71,8 @@
     .project.full h3{font-size:34px}
     .project-link{transition:background .2s,color .2s,padding .2s}
     .project-link:hover{padding-left:29px}
+    .cupid-demo-link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:var(--ink);font-weight:800;background:var(--lime);border:1px solid var(--ink);padding:12px 16px}
+    .cupid-demo-link:hover{transform:translateY(-1px)}
     .section-head{scroll-margin-top:100px}
     @media(max-width:930px){
       .project.full{display:flex;grid-column:span 12}
