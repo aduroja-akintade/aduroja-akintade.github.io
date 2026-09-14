@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+<rect width="1200" height="520" rx="28" fill="#11131a"/>
+<text x="56" y="62" fill="#baff2a" font-size="18" font-family="monospace" font-weight="700">CUPID ERRANDS · DUPLICATE PROTECTION PROOF</text>
+<text x="56" y="104" fill="#fff" font-size="34" font-family="Arial,sans-serif" font-weight="700">Existing Gmail message ID stops before another AI call</text>
+<g font-family="Arial,sans-serif">
+<g transform="translate(60 180)"><rect width="260" height="120" rx="16" fill="#202334" stroke="#565d7c"/><text x="24" y="38" fill="#aeb5cc" font-size="14">INPUT</text><text x="24" y="69" fill="#fff" font-size="17" font-weight="700">messageId</text><text x="24" y="96" fill="#baff2a" font-size="15" font-family="monospace">1a09f81451415ca3</text></g>
+<text x="342" y="246" fill="#8c95b3" font-size="32">→</text>
+<g transform="translate(390 160)"><rect width="350" height="160" rx="16" fill="#24203a" stroke="#7867c9" stroke-width="2"/><text x="24" y="38" fill="#fff" font-size="20" font-weight="700">Duplicate Guard</text><text x="24" y="70" fill="#c9cce0" font-size="15">Operation: If Row Does Not Exist</text><text x="24" y="98" fill="#c9cce0" font-size="15">Table: processed_emails</text><text x="24" y="126" fill="#c9cce0" font-size="15">Match: messageId</text><text x="24" y="150" fill="#baff2a" font-size="14" font-weight="700">Existing row found</text></g>
+<text x="760" y="246" fill="#8c95b3" font-size="32">→</text>
+<g transform="translate(810 180)"><rect width="330" height="120" rx="16" fill="#17291d" stroke="#3f8b55" stroke-width="2"/><text x="28" y="45" fill="#baff2a" font-size="21" font-weight="700">NO OUTPUT DATA</text><text x="28" y="78" fill="#fff" font-size="15">Workflow stops here.</text><text x="28" y="102" fill="#c9f7d2" font-size="14">Node executed successfully.</text></g>
+</g>
+<g transform="translate(60 370)" font-family="Arial,sans-serif"><text x="0" y="0" fill="#fff" font-size="17" font-weight="700">Downstream actions prevented:</text><g font-size="15" fill="#c9cce0"><text x="0" y="38">✕ Gemini classification</text><text x="260" y="38">✕ Department routing</text><text x="520" y="38">✕ Gmail notification</text><text x="770" y="38">✕ Slack notification</text><text x="990" y="38">✕ Duplicate record</text></g></g>
+<rect x="60" y="448" width="1080" height="36" rx="10" fill="#1d2230"/><text x="600" y="472" text-anchor="middle" fill="#dce1f0" font-size="14" font-family="Arial,sans-serif">Verified against an already processed Sales message during final end-to-end testing.</text>
+</svg>
