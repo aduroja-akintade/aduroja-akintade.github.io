@@ -78,3 +78,12 @@ section[id]{scroll-margin-top:100px}
  .curriculum-card{min-height:unset}
  .rules-table{font-size:11px}
 }
+
+/* Homepage course feature */
+.phase2-feature{background:#204d37;border:1px solid #6a9875;margin-top:32px;margin-bottom:25px;padding:32px;display:flex;justify-content:space-between;gap:30px;align-items:center}
+.phase2-feature h3{font:700 clamp(24px,2.8vw,38px)/1.16 'Space Grotesk',sans-serif;letter-spacing:-.04em;margin:14px 0}
+.phase2-feature p{max-width:650px;color:#d6e9d8;font-size:13px;line-height:1.8}
+.phase2-feature-actions{min-width:200px;display:flex;flex-direction:column;gap:10px}
+.phase2-feature-actions .button{white-space:nowrap}
+@media(max-width:900px){.phase2-feature{display:block}.phase2-feature-actions{flex-direction:row;flex-wrap:wrap}}
+@media(max-width:540px){.phase2-feature{padding:22px}.phase2-feature-actions{display:flex;flex-direction:column}}
