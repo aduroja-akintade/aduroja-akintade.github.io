@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "description": "Six synthetic lead routing examples for AI with Aduroja starter lab. These are demonstrations, not real leads.",
+  "cases": [
+    {
+      "id": "P-001",
+      "description": "Priority",
+      "input": {
+        "leadId": "DEMO-001",
+        "service": "email_automation",
+        "budget": 1200,
+        "timelineDays": 5,
+        "consent": true
+      },
+      "expected": "priority"
+    },
+    {
+      "id": "S-002",
+      "description": "Standard",
+      "input": {
+        "leadId": "DEMO-002",
+        "service": "crm_integration",
+        "budget": 600,
+        "timelineDays": 30,
+        "consent": true
+      },
+      "expected": "standard"
+    },
+    {
+      "id": "N-003",
+      "description": "Nurture",
+      "input": {
+        "leadId": "DEMO-003",
+        "service": "ai_assistant",
+        "budget": 200,
+        "timelineDays": 14,
+        "consent": true
+      },
+      "expected": "nurture"
+    },
+    {
+      "id": "I-004",
+      "description": "Invalid",
+      "input": {
+        "leadId": "DEMO-004",
+        "service": "email_automation",
+        "budget": -5,
+        "timelineDays": 5,
+        "consent": true
+      },
+      "expected": "invalid"
+    },
+    {
+      "id": "C-005",
+      "description": "No consent",
+      "input": {
+        "leadId": "DEMO-005",
+        "service": "email_automation",
+        "budget": 2000,
+        "timelineDays": 2,
+        "consent": false
+      },
+      "expected": "do_not_contact"
+    },
+    {
+      "id": "H-006",
+      "description": "Human review",
+      "input": {
+        "leadId": "DEMO-006",
+        "service": "unknown_service",
+        "budget": 2000,
+        "timelineDays": 3,
+        "consent": true
+      },
+      "expected": "human_review"
+    }
+  ]
+}
