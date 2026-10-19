@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A free original AI automation starter lab: design, test and explain a deterministic lead qualification workflow.">
+<title>Free Starter Lab: Lead Qualification | AI with Aduroja</title>
+<link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../enhancements.css">
+<script src="./lead-router.js" defer></script></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav"><a class="identity" href="../"><span class="mark">AA<span>.</span></span><span class="wordmark">AI with Aduroja<small>FREE ENGINEERING LAB</small></span></a><nav aria-label="Breadcrumb" class="learning-header-links"><a href="./">All lessons</a><a href="../">Home</a></nav></div></header>
+<main id="main" class="container lesson">
+<div class="eyebrow">FREE LAB 01 / AUTOMATION FUNDAMENTALS</div>
+<h1>Build a lead router.<br><em>Then prove it works.</em></h1>
+<p class="intro">Learn the engineering discipline behind a basic business automation: defining inputs, validating data, routing requests and testing different outcomes. Start with plain business rules before introducing an AI model.</p>
+<div class="lesson-facts"><span>Level: Beginner</span><span>Mode: Browser simulation + optional n8n build</span><span>Data: Synthetic only</span></div>
+<aside class="notice"><strong>Evidence boundary:</strong> This is an original training simulation inspired by common lead-qualification design patterns, not a copy of a private course recording or an export from a live client system. It does not collect, transmit or persist form responses.</aside>
+<section aria-labelledby="before" class="lesson-step"><div class="eyebrow">01 / BEFORE</div><h2 id="before">Define the problem and success criteria</h2>
+<p>A service business receives enquiries with inconsistent details. Staff must decide which to prioritize. Our goal is to turn those enquiries into <strong>predictable routing outcomes</strong>, not to pretend that an LLM's response is always correct.</p>
+<div class="rule-grid"><div><strong>Input contract</strong><p>Lead ID, service, budget in euros, deadline in days, and contact consent.</p></div><div><strong>Output contract</strong><p>Exactly one routing decision: invalid, do_not_contact, human_review, priority, standard or nurture.</p></div><div><strong>Acceptance criteria</strong><p>Identical inputs produce identical decisions; invalid data never creates an outbound action.</p></div></div>
+</section>
+<section aria-labelledby="build" class="lesson-step"><div class="eyebrow">02 / BUILD</div><h2 id="build">Try the router with synthetic data</h2>
+<p>Change the fields below and run the deterministic rules. Everything runs locally in your browser. The example simulates classification only; no email, CRM entry or network request is made.</p>
+<div class="lab-panel">
+<form id="lead-form" class="lab-form">
+ <div class="field"><label for="lead-id">Synthetic lead ID</label><input id="lead-id" name="leadId" type="text" value="DEMO-001" maxlength="40" required></div>
+ <div class="field"><label for="service">Requested service</label><select id="service" name="service"><option value="email_automation">Email automation</option><option value="ai_assistant">AI assistant</option><option value="crm_integration">CRM integration</option><option value="unknown_service">Unrecognized service</option></select></div>
+ <div class="field"><label for="budget">Budget (€)</label><input id="budget" name="budget" type="number" value="1200" step="1" min="0" max="1000000" required></div>
+ <div class="field"><label for="timeline">Timeline (days)</label><input id="timeline" name="timeline" type="number" value="5" step="1" min="0" max="3650" required></div>
+ <label class="consent-check"><input id="consent" name="consent" type="checkbox" checked> Demonstration contact permission granted</label>
+ <button class="button dark" type="submit">Evaluate lead →</button>
+</form>
+<div class="lab-result" aria-live="polite" aria-atomic="true"><span class="eyebrow">ROUTING RESULT</span><strong id="decision">Waiting for input</strong><p id="explanation">Submit the form to evaluate the synthetic request.</p><p class="result-note">No data leaves your browser. No message is sent.</p></div>
+</div>
+<p class="small-line">The same logic is implemented in the readable <a href="./lead-router.js">JavaScript example</a>. You can inspect it and then reproduce it using n8n Edit Fields, IF/Switch, and data-table nodes.</p>
+</section>
+<section aria-labelledby="rules" class="lesson-step"><div class="eyebrow">03 / CONTROL</div><h2 id="rules">Understand the routing rules</h2>
+<table class="rules-table"><thead><tr><th>Order</th><th>Condition</th><th>Decision</th></tr></thead><tbody>
+<tr><td>1</td><td>Malformed ID, budget or timeline</td><td><code>invalid</code></td></tr>
+<tr><td>2</td><td>No contact consent</td><td><code>do_not_contact</code></td></tr>
+<tr><td>3</td><td>Requested service not recognized</td><td><code>human_review</code></td></tr>
+<tr><td>4</td><td>Timeline ≤ 7 days AND budget ≥ €1,000</td><td><code>priority</code></td></tr>
+<tr><td>5</td><td>Budget ≥ €500</td><td><code>standard</code></td></tr>
+<tr><td>6</td><td>Otherwise</td><td><code>nurture</code></td></tr>
+</tbody></table>
+<p class="small-line">These thresholds are illustrative business requirements, not recommended pricing or a universal sales policy.</p>
+</section>
+<section aria-labelledby="after" class="lesson-step"><div class="eyebrow">04 / AFTER</div><h2 id="after">Test it, don't just demonstrate it</h2>
+<p>Download the <a href="./starter-fixtures.json" download>six synthetic test scenarios (JSON)</a>. Build the same rules inside n8n or another workflow tool. Test each route and record the observed result against its expected result.</p>
+<div class="check-grid">
+<div><strong>Test coverage</strong><p>Priority, standard, nurture, invalid, no-consent and human-review routes.</p></div>
+<div><strong>Failure handling</strong><p>Make malformed inputs explicit. Never silently label uncertain data as a negative response.</p></div>
+<div><strong>Repeatability</strong><p>Run the same fixture twice. Discuss how a unique lead ID would prevent duplicate external actions.</p></div>
+<div><strong>Evidence</strong><p>Capture the workflow diagram and each outcome. Explain one rejected input and one boundary condition.</p></div>
+</div></section>
+<section aria-labelledby="apply" class="lesson-step"><div class="eyebrow">05 / APPLICATION</div><h2 id="apply">Create a client-style deliverable</h2>
+<p>Write a short handover document: the customer's problem, an architecture diagram, accepted inputs, decision table, test evidence, privacy safeguards and the limitations of your simulation. Do not claim production deployment without authenticated triggers, persistent deduplication, permission checks, monitored failures and real integration tests.</p>
+<div class="notice"><strong>Next challenge:</strong> Replace the simulated result with a write to a test-only datastore, use synthetic contact records, and prevent duplicate writes with a unique identifier. Document exactly how you tested it.</div>
+<div class="lesson-actions"><a class="button dark" href="./starter-fixtures.json" download>Download test fixtures ↗</a><a class="button outline" href="./">Back to learning pathway →</a></div>
+</section>
+</main>
+<footer class="footer"><div class="container footrow"><div><span class="footmark">AA.</span> AI with Aduroja <small>Original educational material</small></div><nav aria-label="Footer"><a href="../">Home</a><a href="./">Learning pathway</a></nav></div><p class="container disclaimer">For educational use with synthetic data only. No student data is stored by this lab. Actual commercial systems require additional engineering, security and legal review.</p></footer>
+</body></html>
