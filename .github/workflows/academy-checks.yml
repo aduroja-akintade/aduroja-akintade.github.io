@@ -1,0 +1,31 @@
+name: Academy static validation
+on:
+  pull_request:
+    branches:
+      - academy-cloudflare-pages-20261018
+    paths:
+      - academy-cloudflare/**
+      - scripts/test-academy.cjs
+      - .github/workflows/academy-checks.yml
+  push:
+    branches:
+      - academy-cloudflare-pages-20261018
+      - academy-phase2-curriculum-20261019
+    paths:
+      - academy-cloudflare/**
+      - scripts/test-academy.cjs
+      - .github/workflows/academy-checks.yml
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run starter lab fixtures and internal link checks
+        run: node scripts/test-academy.cjs
