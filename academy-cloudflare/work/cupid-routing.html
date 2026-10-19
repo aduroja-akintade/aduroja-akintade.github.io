@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Evidence-led case study of an n8n email routing workflow: architecture, demonstration, tested paths, and documented reliability limitations.">
+<title>Cupid Errands Email Routing | Engineering Case Study</title>
+<link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../enhancements.css"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav"><a class="identity" href="../"><span class="mark">AA<span>.</span></span><span class="wordmark">Aduroja Akintade<small>ENGINEERING CASE STUDY</small></span></a><nav class="learning-header-links" aria-label="Site navigation"><a href="../#portfolio">Portfolio</a><a href="../#academy">Academy</a><a href="../">Home</a></nav></div></header>
+<main id="main" class="container lesson">
+<div class="eyebrow">PROJECT EVIDENCE / EMAIL CLASSIFICATION / N8N</div>
+<h1>Cupid Errands:<br><em>route with evidence.</em></h1>
+<p class="intro">An automation demonstrator for structured AI email classification and deterministic departmental routing. The system is a tested portfolio workflow, not a claim of production-ready enterprise email infrastructure.</p>
+<div class="lesson-facts"><span>n8n</span><span>Google Gemini</span><span>Gmail</span><span>Slack</span><span>Data Tables</span></div>
+<div class="lesson-actions"><a class="button dark" href="https://www.tella.tv/video/ai-email-routing-system-dql7" target="_blank" rel="noopener noreferrer">Watch public walkthrough ↗</a><a class="button outline" href="https://github.com/aduroja-akintade/ai-automation-portfolio/tree/main/03-cupid-intelligent-email-routing" target="_blank" rel="noopener noreferrer">Inspect repository ↗</a></div>
+<section class="lesson-step" aria-labelledby="arch"><div class="eyebrow">01 / VERIFIED COMPONENTS</div><h2 id="arch">Architecture and decision boundaries</h2>
+<figure class="evidence-image"><img loading="lazy" src="https://raw.githubusercontent.com/aduroja-akintade/ai-automation-portfolio/main/03-cupid-intelligent-email-routing/01-final-n8n-workflow.png" alt="Screenshot showing the Cupid Errands n8n email classification and departmental routing workflow." width="1320" height="740"><figcaption>Workflow screenshot from the public GitHub case-study directory. For implementation details and other screenshots, inspect the repository.</figcaption></figure>
+<div class="rule-grid"><div><strong>Ingest</strong><p>A dedicated Gmail trigger captures messages, then Edit Fields normalizes the incoming request.</p></div><div><strong>Classify</strong><p>Gemini with a structured output parser returns a department and supporting fields.</p></div><div><strong>Route</strong><p>An n8n Switch chooses a department, followed by Gmail and Slack actions.</p></div></div>
+<p>This workflow includes a duplicate-guard lookup and a processed-state update. Its existing execution screenshots and narrated walkthrough support a portfolio demonstration, but the current public repository does not include a sanitized executable n8n export.</p>
+</section>
+<section class="lesson-step" aria-labelledby="tests"><div class="eyebrow">02 / DEMONSTRATION EVIDENCE</div><h2 id="tests">What was tested and what remains open</h2>
+<table class="rules-table"><thead><tr><th>Area</th><th>Evidence</th><th>Current limitation</th></tr></thead><tbody>
+<tr><td>Five department routes</td><td>Recorded execution evidence and public walkthrough</td><td>Not a regression suite</td></tr>
+<tr><td>Duplicate-guard behavior</td><td>One documented duplicate suppression test</td><td>Concurrent message races not proven safe</td></tr>
+<tr><td>Gemini temporary failures</td><td>Retry configuration described in the project</td><td>Dead-letter and incident-alert handling not demonstrated</td></tr>
+<tr><td>Low confidence</td><td>Output includes a confidence field</td><td>Separate confidence-threshold gate needs verification or implementation</td></tr>
+</tbody></table>
+<div class="notice"><strong>Integrity rule:</strong> A narrated demonstration and screenshot document observed behavior. They are not substitutes for sanitized workflow exports, automated test fixtures, security checks or independent deployment verification.</div>
+</section>
+<section class="lesson-step" aria-labelledby="next"><div class="eyebrow">03 / ENGINEERING FOLLOW-UP</div><h2 id="next">How this becomes stronger</h2>
+<div class="check-grid"><div><strong>Control</strong><p>Add a deterministic confidence gate with explicit ambiguous-input behavior.</p></div><div><strong>Idempotency</strong><p>Use an atomic unique record before notifications to prevent concurrent duplicate sends.</p></div><div><strong>Reliability</strong><p>Reconcile partial failures, capture dead-letter events and alert after final retry.</p></div><div><strong>Proof</strong><p>Publish a sanitized workflow export, test scenarios, expected decisions and an evidence index.</p></div></div>
+<p class="small-line">These are proposed remediation steps. They are not represented as already implemented.</p></section>
+<section class="lesson-step" aria-labelledby="learn"><div class="eyebrow">04 / ACADEMY APPLICATION</div><h2 id="learn">What learners can reproduce</h2><p>Start with a deterministic router before adding AI classification. Compare the model's suggested department against a validated list, avoid automatic external actions when classification is uncertain, and test retry and duplicate-delivery scenarios.</p><div class="lesson-actions"><a class="button dark" href="../learn/first-workflow.html">Try the free starter lab ↗</a><a class="button outline" href="../#portfolio">All portfolio highlights →</a></div></section>
+</main><footer class="footer"><div class="container footrow"><div><span class="footmark">AA.</span> Aduroja Akintade <small>Evidence before claims</small></div><nav aria-label="Footer"><a href="../">Home</a><a href="https://github.com/aduroja-akintade/ai-automation-portfolio" target="_blank" rel="noopener noreferrer">Portfolio repository</a></nav></div></footer>
+</body></html>
